@@ -42,11 +42,13 @@ pipeline {
                     parameters: [text(name: 'Plan', description: 'Please review the plan', defaultValue: plan)]
                }
            }
-       
-           stage('Apply') {
+       }
+
+        stage('Apply') {
             steps {
                 sh "pwd;cd terraform/ ; terraform apply -input=false tfplan"
             }
         }
     }
-    
+
+  }
